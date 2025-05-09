@@ -23,7 +23,7 @@ export default function Navbar() {
                 />
             </Link>
 
-            <ul className="text-black font-bold flex gap-10 text-[50px]" style={{
+            <ul className="text-black font-bold flex gap-10 text-[20px]" style={{
                 display: "flex",
                 gap: "30px",
                 listStyle: "none",
