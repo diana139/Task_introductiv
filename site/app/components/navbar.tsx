@@ -13,7 +13,7 @@ export default function Navbar() {
             borderBottom: "1px solid #ccc"
         }}>
             
-            <Link href="/">
+            <Link href="https://www.asii.ro">
                 <Image 
                     src="https://www.asii.ro/_astro/asii.e9f13d98.svg" 
                     height={100} 
@@ -31,8 +31,8 @@ export default function Navbar() {
                 padding: 0,
             }} >
                 <li><Link href="/">Acasa</Link></li>
-                <li><Link href="/mentori">Mentori</Link></li>
-                <li><Link href="/boboci">Boboci</Link></li>
+                <li><Link href="/membri/mentori">Mentori</Link></li>
+                <li><Link href="/membri/boboci">Boboci</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
             </ul>
         </nav>
