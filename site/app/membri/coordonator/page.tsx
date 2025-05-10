@@ -7,7 +7,7 @@ const membri = [
     { 
         id: 1, 
         nume: 'Nechifor Alexandru', 
-        descriere: 'Expert în React și în distracție, jonglez zilnic între componente funcționale și greutăți la sală. Îmi place să optimizez atât performanța aplicațiilor, cât și a genuflexiunilor. Cred cu tărie că un console.log() bun și o serie de biceps pot rezolva aproape orice. Între un bug și un set de flotări, aleg… ambele. Dacă e nevoie de cod curat sau de energie la un eveniment, sunt omul potrivit!',
+        descriere: 'Este genul de persoană care îți configurează rețeaua mai repede decât îți configurezi tu alarma de dimineață. Coordonează echipe cu lejeritatea cu care alții dau click pe „Accept all cookies” – adică rapid și fără ezitare. Îi place să țină lucrurile organizate, dar nu rigide; echipa lui funcționează ca un sistem bine pus la punct… cu update-uri frecvente de râsete.',
         poza: '/images/NechiforAlexandru.jpg' 
     },
    
@@ -60,7 +60,7 @@ export default function CoordonatorPage() {
             <div className={styles.cardContainer}>
                 {membri.map((membru, index) => (
                     <div key={membru.id} className={styles.card}>
-                        <Link href={`/membri/coordonator/${membru.id}`}>
+                        <Link href={`/membri/coordonator/nechifor`}>
                             <img 
                                 src={membru.poza} 
                                 alt={membru.nume} 
