@@ -31,9 +31,11 @@ export default function Navbar() {
                 padding: 0,
             }} >
                 <li><Link href="/">Acasa</Link></li>
+                <li><Link href="/membri/coordonator">Coordonator</Link></li>
                 <li><Link href="/membri/mentori">Mentori</Link></li>
                 <li><Link href="/membri/boboci">Boboci</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
+
             </ul>
         </nav>
         </>

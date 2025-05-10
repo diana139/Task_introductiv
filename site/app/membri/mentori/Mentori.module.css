@@ -8,17 +8,20 @@
 
 .card {
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 50px;
     padding: 16px;
     width: 700px;
     height: 500px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg,#faf6ed 0%, #fff3cb 100%);
     transition: transform 0.2s;
 }
 
 .card:hover {
     transform: scale(1.05);
+    background: linear-gradient(45deg, #f2ecdd 0%, #e3dbc2 100%);
+    transition: 0.5s;
 }
 
 .image {

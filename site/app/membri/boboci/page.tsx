@@ -14,14 +14,9 @@ const membri = [
         id: 2,
         nume: 'Rosu Diana',
         descriere: 'Pasionată de informatică, dar nu uit niciodată să iau o pauză pentru o plimbare bună și o discuție cu prietenii. Îmi place să rezolv bug-uri, dar și să creez conexiuni – atât între linii de cod, cât și între oameni. Împart timpul între tastatură și povești în aer liber, pentru că viața e mai frumoasă cu echilibru (și un pic de Wi-Fi).',
-        poza: '/images/DianaRusu.jpg',
+        poza: '/images/RosuDiana.jpg',
     },
-    {
-        id: 3,
-        nume: 'Paval Mihnea',
-        descriere: 'Web development e ca un joc în care fiecare linie de cod este o misiune, iar fiecare funcționalitate e o provocare de depășit. Mă implic cu energie în fiecare proiect, la fel cum mă implic într-o activitate sau o discuție interesantă cu prietenii. Fiecare site pe care îl construiesc este ca un nou nivel pe care îl explorez, iar tăria mea vine din dorința de a învăța și de a colabora. Îmi place să creez ceva util, dar și să mă distrez pe parcurs – pentru că, în fond, viața e un mix între muncă, joacă și… tărie de caracter!',
-        poza: '/images/MihneaPaval.jpg',
-    },
+   
     {
         id: 4,
         nume: 'Rusu Catalin',
@@ -34,12 +29,7 @@ const membri = [
         descriere: 'Ziua, mă ocup de pisici (care au mai multă personalitate decât un cod buguit) și antrenez porumbei să zboare într-un stil deosebit, iar noaptea mă pierd în lumea web development-ului, construind site-uri ca niște cuiburi digitale. Mă pricep să creez conexiuni – între linii de cod sau între pisici și oameni. Fiecare proiect e o provocare, dar nimic nu se compară cu sentimentul de satisfacție când porumbeii și site-urile mele sunt învățate să zboare perfect!',
         poza: '/images/TipuleacGabriela.jpg',
     },
-    {
-        id: 6,
-        nume: 'Irimia Casandra',
-        descriere: 'Ziua, mă plimb prin lume, explorând locuri noi și găsind inspirație în fiecare colț al naturii. Noaptea, mă întorc în fața ecranului și construiesc site-uri care reflectă aceleași vibrații – simple, dar pline de viață. Călătoriile îmi dau idei pentru design, iar aerul curat mă ajută să rezolv bug-uri ca un explorator în fața unui nou teritoriu. Viața e ca un proiect web – cu cât îți împărtășești experiențele, cu atât devine mai frumoasă.',
-        poza: '/images/CasandraIrimia.jpg',
-    },
+   
 ];
 
 export default function BobociPage() {

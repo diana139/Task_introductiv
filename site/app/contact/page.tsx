@@ -9,8 +9,8 @@ export default function ContactPage() {
         </div>
         <div className="bg-white shadow-md rounded-lg p-6 w-96 text-center">
           <h2 className="text-2xl font-semibold mb-4">Rosu Diana</h2>
-          <p className="text-lg">Email: <a href="mailto:fondator2@example.com" className="text-blue-500">fondator2@example.com</a></p>
-          <p className="text-lg">Telefon: <a href="tel:+40123456780" className="text-blue-500">+40 123 456 780</a></p>
+          <p className="text-lg">Email: <a href="dianarosuu18@gmail.com" className="text-blue-500">dianarosuu18@gmail.com</a></p>
+          <p className="text-lg">Telefon: <a href="tel:+40758264170" className="text-blue-500">+40 758 264 170</a></p>
         </div>
       </div>
     );
