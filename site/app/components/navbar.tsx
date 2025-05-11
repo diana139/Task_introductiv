@@ -20,7 +20,7 @@ export default function Navbar() {
         />
       </Link>
 
-      <ul className=" font-bold flex gap-10 text-[20px]">s
+      <ul className=" font-bold flex gap-10 text-[20px]">
         <li><Link href="/">Acasa</Link></li>
         <li><Link href="/membri/coordonator">Coordonator</Link></li>
         <li><Link href="/membri/mentori">Mentori</Link></li>
