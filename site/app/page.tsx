@@ -23,7 +23,7 @@ export default function Home() {
             <div className="
           p-6
           h-[70px] w-[300px]
-          bg-gradient-to-br from-[#ffecc1] to-amber-50
+          bg-gradient-to-br from-[#c1b9aa] to-[#fff3cb]
           rounded-[20px] 
           hover:bg-gradient-to-r hover:from-[#895a5a] hover:to-[#f00e0e]
           transition-all duration-500
@@ -35,7 +35,7 @@ export default function Home() {
           <div className="
           p-6
           h-[70px] w-[300px]
-          bg-gradient-to-br from-[#ffecc1] to-amber-50
+          bg-gradient-to-br from-[#c1b9aa] to-[#fff3cb]
           rounded-[20px] 
           hover:bg-gradient-to-r hover:from-[#895a5a] hover:to-[#f00e0e]
           transition-all duration-500
@@ -48,7 +48,7 @@ export default function Home() {
           <div className="
           p-6
           h-[70px] w-[300px]
-          bg-gradient-to-br from-[#ffecc1] to-amber-50
+          bg-gradient-to-br from-[#c1b9aa] to-[#fff3cb]
           rounded-[20px] 
           hover:bg-gradient-to-r hover:from-[#895a5a] hover:to-[#f00e0e]
           transition-all duration-500

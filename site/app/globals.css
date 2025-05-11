@@ -1,2 +1,10 @@
 @import "tailwindcss";
 
+.dark .card {
+    background: linear-gradient(45deg, #222222 0%, #333333 100%);
+    color: white;
+  }
+  
+  .dark .card:hover {
+    background: linear-gradient(45deg, #444444 0%, #555555 100%);
+  }

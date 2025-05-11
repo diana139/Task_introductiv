@@ -9,7 +9,7 @@ export default function Navbar() {
   const { theme } = useTheme();
 
   return (
-    <nav className="flex items-center justify-between px-4 py-2 border-b border-gray-300 dark:border-gray-600">
+    <nav className="flex items-center justify-between px-4 py-2 ">
       <Link href="https://www.asii.ro">
         <Image
           src="https://www.asii.ro/_astro/asii.e9f13d98.svg"
@@ -20,7 +20,7 @@ export default function Navbar() {
         />
       </Link>
 
-      <ul className=" font-bold flex gap-10 text-[20px]">
+      <ul className=" font-bold flex gap-10 text-[20px]">s
         <li><Link href="/">Acasa</Link></li>
         <li><Link href="/membri/coordonator">Coordonator</Link></li>
         <li><Link href="/membri/mentori">Mentori</Link></li>
