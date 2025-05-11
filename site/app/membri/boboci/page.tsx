@@ -18,14 +18,14 @@ const membri = [
     },
    
     {
-        id: 4,
+        id: 3,
         nume: 'Rusu Catalin',
         descriere: 'Ziua, mă antrenez pe teren, fie că dau lovituri pe ring sau alerg după mingea la fotbal, iar noaptea îmi „sparg” codul ca un adevărat hacker. Am încercat multe sporturi, dar pasiunea pentru informatică mă ține mereu în priză. În sport, am învățat să fiu rapid și decisiv, iar în informatică aplic aceleași principii – doar că aici adversarii sunt bug-uri și algoritmi, nu oameni. Îmbin adrenalina din contact cu logica din cod și, la final, întotdeauna mă simt câștigător!',
         poza: '/images/RusuCatalin.jpg',
     },
     {
-        id: 5,
-        nume: 'Tipuleac Gabriela',
+        id: 4,
+        nume: 'Tibuleac Gabriela',
         descriere: 'Ziua, mă ocup de pisici (care au mai multă personalitate decât un cod buguit) și antrenez porumbei să zboare într-un stil deosebit, iar noaptea mă pierd în lumea web development-ului, construind site-uri ca niște cuiburi digitale. Mă pricep să creez conexiuni – între linii de cod sau între pisici și oameni. Fiecare proiect e o provocare, dar nimic nu se compară cu sentimentul de satisfacție când porumbeii și site-urile mele sunt învățate să zboare perfect!',
         poza: '/images/TipuleacGabriela.jpg',
     },
