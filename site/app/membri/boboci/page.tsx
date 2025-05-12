@@ -87,7 +87,7 @@ export default function BobociPage() {
                             />
                         </Link>
                         <h2 className={styles.title}>{membru.nume}</h2>
-                        <p className={styles.description}>{membru.descriere}</p>
+                       {/*<p className={styles.description}>{membru.descriere}</p>*/}
                         <div className="flex justify-between items-center -mt-80">
                           
                             <div className="flex flex-col items-center">
