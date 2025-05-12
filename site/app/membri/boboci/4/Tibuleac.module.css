@@ -90,3 +90,31 @@
     width: 24px;
     height: 24px;
 }
+.slideshowWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    z-index: 10;
+}
+
+.leftButton {
+    left: -50px; /* Poziționează în stânga față de container */
+}
+
+.rightButton {
+    right: -50px; /* Poziționează în dreapta față de container */
+}

@@ -20,13 +20,13 @@ const membri = [
         id: 3,
         nume: 'Irimia Casandra',
        // descriere: 'Ziua, mă plimb prin lume, explorând locuri noi și găsind inspirație în fiecare colț al naturii. Noaptea, mă întorc în fața ecranului și construiesc site-uri care reflectă aceleași vibrații – simple, dar pline de viață. Călătoriile îmi dau idei pentru design, iar aerul curat mă ajută să rezolv bug-uri ca un explorator în fața unui nou teritoriu. Viața e ca un proiect web – cu cât îți împărtășești experiențele, cu atât devine mai frumoasă.',
-        poza: '/images/CasandraIrimia.jpg',
+        poza: '/images/CasandraIrimia.jpg'
     },
     {
         id: 4,
         nume: 'Paval Mihnea',
       //  descriere: 'Web development e ca un joc în care fiecare linie de cod este o misiune, iar fiecare funcționalitate e o provocare de depășit. Mă implic cu energie în fiecare proiect, la fel cum mă implic într-o activitate sau o discuție interesantă cu prietenii. Fiecare site pe care îl construiesc este ca un nou nivel pe care îl explorez, iar tăria mea vine din dorința de a învăța și de a colabora. Îmi place să creez ceva util, dar și să mă distrez pe parcurs – pentru că, în fond, viața e un mix între muncă, joacă și… tărie de caracter!',
-        poza: '/images/MihneaPaval.jpg',
+        poza: '/images/MihneaPaval.jpg'
     },
 ];
 
@@ -84,7 +84,7 @@ export default function MentoriPage() {
                             />
                         </Link>
                         <h2 className={styles.title}>{membru.nume}</h2>
-                        <p className={styles.description}>{membru.descriere}</p>
+                    
                         <div className="flex justify-between items-center -mt-80">
                             <div className="flex flex-col items-center">
                                 <button onClick={() => handleLike(index)}>

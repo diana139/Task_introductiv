@@ -10,7 +10,7 @@ const poze = [
     },
     {
         id: 2,
-        src: '/images/MoisaAndreifun.jpg',
+        src: '/images/Moisafun.jpg',
         descriere: 'Coordonatorul nostru verificând sistemul audio.',
     },
 ];
@@ -18,10 +18,11 @@ const poze = [
 export default function MoisaPage() {
     const [likes, setLikes] = useState<number[]>([]);
     const [dislikes, setDislikes] = useState<number[]>([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        const storedLikes = localStorage.getItem('moisaLikes');
-        const storedDislikes = localStorage.getItem('moisaDislikes');
+        const storedLikes = localStorage.getItem('RusuLikes');
+        const storedDislikes = localStorage.getItem('RusuDislikes');
         if (storedLikes) {
             setLikes(JSON.parse(storedLikes));
         } else {
@@ -36,60 +37,69 @@ export default function MoisaPage() {
 
     useEffect(() => {
         if (likes.length > 0) {
-            localStorage.setItem('moisaLikes', JSON.stringify(likes));
+            localStorage.setItem('MoisaLikes', JSON.stringify(likes));
         }
         if (dislikes.length > 0) {
-            localStorage.setItem('moisaDislikes', JSON.stringify(dislikes));
+            localStorage.setItem('MoisaDislikes', JSON.stringify(dislikes));
         }
     }, [likes, dislikes]);
 
-    const handleLike = (index: number) => {
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % poze.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const handleLike = () => {
         const newLikes = [...likes];
-        newLikes[index] += 1;
+        newLikes[currentIndex] += 1;
         setLikes(newLikes);
     };
 
-    const handleDislike = (index: number) => {
+    const handleDislike = () => {
         const newDislikes = [...dislikes];
-        newDislikes[index] += 1;
+        newDislikes[currentIndex] += 1;
         setDislikes(newDislikes);
     };
 
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % poze.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + poze.length) % poze.length);
+    };
+
+    const poza = poze[currentIndex];
+
     return (
         <div className={styles.container}>
-            <h1 className={styles.header}>Profil Coordonator - Moisa Andrei</h1>
+            <h1 className={styles.header}>Profil Boboc - Moisa Andrei</h1>
             <p className={styles.description}>
-                TREBUIE MODIFICAT AICI:P
-                Nechifor este coordonatorul echipei noastre, un lider dedicat și pasionat. Cu o experiență vastă în domeniu, 
-                el inspiră echipa să atingă noi culmi. În timpul liber, îi place să exploreze natura, să citească și să participe 
-                la evenimente sociale.
+                Sunt o persoană calmă, dar și agitată în același timp
             </p>
-            <div className={styles.cardContainer}>
-                {poze.map((poza, index) => (
-                    <div key={poza.id} className={styles.card}>
-                        <img src={poza.src} alt={`Poza ${poza.id}`} className={styles.image} />
-                        <h2 className={styles.title}>Poza {poza.id}</h2>
-                        <p className={styles.photoDescription}>{poza.descriere}</p>
-                        <div className={styles.actions}>
-                            <button onClick={() => handleLike(index)} className={styles.likeButton}>
-                                <img 
-                                    src="/images/like.png" 
-                                    alt="Like" 
-                                    className={styles.icon} 
-                                />
-                                <span>{likes[index]} Likes</span>
-                            </button>
-                            <button onClick={() => handleDislike(index)} className={styles.dislikeButton}>
-                                <img 
-                                    src="/images/dislike.png" 
-                                    alt="Dislike" 
-                                    className={styles.icon} 
-                                />
-                                <span>{dislikes[index]} Dislikes</span>
-                            </button>
-                        </div>
+
+            <div className={styles.slideshowWrapper}>
+                <button onClick={prevSlide} className={`${styles.navButton} ${styles.leftButton}`}>◀</button>
+
+                <div className={styles.card}>
+                    <img src={poza.src} alt={`Poza ${poza.id}`} className={styles.image} />
+                    <h2 className={styles.title}>Poza {poza.id}</h2>
+                    <p className={styles.photoDescription}>{poza.descriere}</p>
+                    <div className={styles.actions}>
+                        <button onClick={handleLike} className={styles.likeButton}>
+                            <img src="/images/like.png" alt="Like" className={styles.icon} />
+                            <span>{likes[currentIndex]} Likes</span>
+                        </button>
+                        <button onClick={handleDislike} className={styles.dislikeButton}>
+                            <img src="/images/dislike.png" alt="Dislike" className={styles.icon} />
+                            <span>{dislikes[currentIndex]} Dislikes</span>
+                        </button>
                     </div>
-                ))}
+                </div>
+
+                <button onClick={nextSlide} className={`${styles.navButton} ${styles.rightButton}`}>▶</button>
             </div>
         </div>
     );

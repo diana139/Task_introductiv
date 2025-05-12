@@ -6,13 +6,26 @@ const poze = [
     {
         id: 1,
         src: '/images/CasandraIrimia.jpg',
-        descriere: 'Casandra Irimia explorând natura în căutarea inspirației.',
+        descriere: 'say matcha :P',
     },
+    {
+        id: 2,
+        src: '/images/Casandrafun.jpg',
+        descriere: 'What happens in Vegas stays in Vegas',
+
+    },
+    {
+        id: 3,
+        src: '/images/casandrasare.jpg',
+        descriere: 'Casandra sare',
+
+    }
 ];
 
 export default function IrimiaPage() {
     const [likes, setLikes] = useState<number[]>([]);
     const [dislikes, setDislikes] = useState<number[]>([]);
+    const [index, setIndex]= useState(1);
 
     useEffect(() => {
         const storedLikes = localStorage.getItem('irimiaLikes');
@@ -37,54 +50,60 @@ export default function IrimiaPage() {
             localStorage.setItem('irimiaDislikes', JSON.stringify(dislikes));
         }
     }, [likes, dislikes]);
+    useEffect(() => {
+            const interval = setInterval(() => {
+                setIndex((prev) => (prev + 1) % poze.length);
+            }, 10000);
+            return () => clearInterval(interval);
+        }, []);
 
-    const handleLike = (index: number) => {
-        const newLikes = [...likes];
-        newLikes[index] += 1;
-        setLikes(newLikes);
+        const handleLike = () => {
+            const newLikes = [...likes];
+            newLikes[index] += 1;
+            setLikes(newLikes);
+        };
+    
+        const handleDislike = () => {
+            const newDislikes = [...dislikes];
+            newDislikes[index] += 1;
+            setDislikes(newDislikes);
+        };
+    const nextSlide = () => {
+        setIndex((prevIndex) => (prevIndex + 1) % poze.length);
     };
 
-    const handleDislike = (index: number) => {
-        const newDislikes = [...dislikes];
-        newDislikes[index] += 1;
-        setDislikes(newDislikes);
+    const prevSlide = () => {
+        setIndex((prevIndex) => (prevIndex - 1 + poze.length) % poze.length);
     };
+
+    const poza = poze[index];
 
     return (
         <div className={styles.container}>
             <h1 className={styles.header}>Profil Mentor - Casandra Irimia</h1>
             <p className={styles.description}>
-                Ziua, mă plimb prin lume, explorând locuri noi și găsind inspirație în fiecare colț al naturii. 
-                Noaptea, mă întorc în fața ecranului și construiesc site-uri care reflectă aceleași vibrații – simple, dar pline de viață. 
-                Călătoriile îmi dau idei pentru design, iar aerul curat mă ajută să rezolv bug-uri ca un explorator în fața unui nou teritoriu. 
-                Viața e ca un proiect web – cu cât îți împărtășești experiențele, cu atât devine mai frumoasă.
+                Ador sa explorez fiecare colt al lumii si sunt deschisa la orice fel de schimbari care ma ajuta sa evoluez pe plan profesional cat si personal
             </p>
-            <div className={styles.cardContainer}>
-                {poze.map((poza, index) => (
-                    <div key={poza.id} className={styles.card}>
-                        <img src={poza.src} alt={`Poza ${poza.id}`} className={styles.image} />
-                        <h2 className={styles.title}>Poza {poza.id}</h2>
-                        <p className={styles.photoDescription}>{poza.descriere}</p>
-                        <div className={styles.actions}>
-                            <button onClick={() => handleLike(index)} className={styles.likeButton}>
-                                <img 
-                                    src="/images/like.png" 
-                                    alt="Like" 
-                                    className={styles.icon} 
-                                />
-                                <span>{likes[index]} Likes</span>
-                            </button>
-                            <button onClick={() => handleDislike(index)} className={styles.dislikeButton}>
-                                <img 
-                                    src="/images/dislike.png" 
-                                    alt="Dislike" 
-                                    className={styles.icon} 
-                                />
-                                <span>{dislikes[index]} Dislikes</span>
-                            </button>
-                        </div>
+            <div className={styles.slideshowWrapper}>
+                <button onClick={prevSlide} className={`${styles.navButton} ${styles.leftButton}`}>◀</button>
+
+                <div className={styles.card}>
+                    <img src={poza.src} alt={`Poza ${poza.id}`} className={styles.image} />
+                    <h2 className={styles.title}>Poza {poza.id}</h2>
+                    <p className={styles.photoDescription}>{poza.descriere}</p>
+                    <div className={styles.actions}>
+                        <button onClick={handleLike} className={styles.likeButton}>
+                            <img src="/images/like.png" alt="Like" className={styles.icon} />
+                            <span>{likes[index]} Likes</span>
+                        </button>
+                        <button onClick={handleDislike} className={styles.dislikeButton}>
+                            <img src="/images/dislike.png" alt="Dislike" className={styles.icon} />
+                            <span>{dislikes[index]} Dislikes</span>
+                        </button>
                     </div>
-                ))}
+                </div>
+
+                <button onClick={nextSlide} className={`${styles.navButton} ${styles.rightButton}`}>▶</button>
             </div>
         </div>
     );

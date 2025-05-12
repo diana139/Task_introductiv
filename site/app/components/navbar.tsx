@@ -20,6 +20,8 @@ export default function Navbar() {
         />
       </Link>
 
+      <span>&#9776;</span>
+
       <ul className=" font-bold flex gap-10 text-[20px]">
         <li><Link href="/">Acasa</Link></li>
         <li><Link href="/membri/coordonator">Coordonator</Link></li>

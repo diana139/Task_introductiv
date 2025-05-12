@@ -1,98 +1,112 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import styles from './Coordonator.module.css';
 
-const membri = [
-    { 
-        id: 1, 
-        nume: 'Nechifor Alexandru', 
-        descriere: 'Este genul de persoană care îți configurează rețeaua mai repede decât îți configurezi tu alarma de dimineață. Coordonează echipe cu lejeritatea cu care alții dau click pe „Accept all cookies” – adică rapid și fără ezitare. Îi place să țină lucrurile organizate, dar nu rigide; echipa lui funcționează ca un sistem bine pus la punct… cu update-uri frecvente de râsete.',
-        poza: '/images/NechiforAlexandru.jpg' 
+const poze = [
+    {
+        id: 1,
+        src: '/images/NechiforAlexandru.jpg',
+        descriere: 'Aceasta este prima poză a coordonatorului, surprinsă într-un moment de relaxare.',
     },
-   
+    {
+        id: 2,
+        src: '/images/porumbel.jpg',
+        descriere: 'No description needed',
+    },
+    {
+        id: 3,
+        src: '/images/NechiforAlexandrufun.jpg',
+        descriere: 'Coordonatorul nostru verificând sistemul audio.',
+    },
 ];
 
-
-export default function CoordonatorPage() {
+export default function NechiforPage() {
     const [likes, setLikes] = useState<number[]>([]);
     const [dislikes, setDislikes] = useState<number[]>([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        const storedLikes = localStorage.getItem('coordonatorLikes');
-        const storedDislikes = localStorage.getItem('coordonatorDislikes');
+        const storedLikes = localStorage.getItem('nechiforLikes');
+        const storedDislikes = localStorage.getItem('nechiforDislikes');
         if (storedLikes) {
             setLikes(JSON.parse(storedLikes));
         } else {
-            setLikes(membri.map(() => 0)); 
+            setLikes(poze.map(() => 0));
         }
         if (storedDislikes) {
             setDislikes(JSON.parse(storedDislikes));
         } else {
-            setDislikes(membri.map(() => 0)); 
+            setDislikes(poze.map(() => 0));
         }
     }, []);
 
     useEffect(() => {
         if (likes.length > 0) {
-            localStorage.setItem('coordonatorLikes', JSON.stringify(likes));
+            localStorage.setItem('nechiforLikes', JSON.stringify(likes));
         }
         if (dislikes.length > 0) {
-            localStorage.setItem('coordonatorDislikes', JSON.stringify(dislikes));
+            localStorage.setItem('nechiforDislikes', JSON.stringify(dislikes));
         }
     }, [likes, dislikes]);
 
-    const handleLike = (index: number) => {
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % poze.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const handleLike = () => {
         const newLikes = [...likes];
-        newLikes[index] += 1;
+        newLikes[currentIndex] += 1;
         setLikes(newLikes);
     };
 
-    const handleDislike = (index: number) => {
+    const handleDislike = () => {
         const newDislikes = [...dislikes];
-        newDislikes[index] += 1;
+        newDislikes[currentIndex] += 1;
         setDislikes(newDislikes);
     };
 
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % poze.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + poze.length) % poze.length);
+    };
+
+    const poza = poze[currentIndex];
+
     return (
-        <div>
-            <h1 className={styles.header}>Coordonator</h1>
-            <div className={styles.cardContainer}>
-                {membri.map((membru, index) => (
-                    <div key={membru.id} className={styles.card}>
-                        <Link href={`/membri/coordonator/nechifor`}>
-                            <img 
-                                src={membru.poza} 
-                                alt={membru.nume} 
-                                className={styles.image} 
-                            />
-                        </Link>
-                        <h2 className={styles.title}>{membru.nume}</h2>
-                        <p className={styles.description}>{membru.descriere}</p>
-                        <div className="flex justify-between items-center -mt-80">
-                            <div className="flex flex-col items-center">
-                                <button onClick={() => handleLike(index)}>
-                                    <img 
-                                        src="/images/like.png" 
-                                        alt="Like" 
-                                        className="w-8 h-8 cursor-pointer"
-                                    />
-                                </button>
-                                <span>{likes[index]} Likes</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <button onClick={() => handleDislike(index)}>
-                                    <img 
-                                        src="/images/dislike.png" 
-                                        alt="Dislike" 
-                                        className="w-8 h-8 cursor-pointer"
-                                    />
-                                </button>
-                                <span>{dislikes[index]} Dislikes</span>
-                            </div>
-                        </div>
+        <div className={styles.container}>
+            <h1 className={styles.header}>Profil Coordonator - Nechifor Alexandru</h1>
+            <p className={styles.description}>
+            Nechifor este coordonatorul echipei noastre, un lider dedicat și pasionat. Cu o experiență vastă în domeniu, 
+                el inspiră echipa să atingă noi culmi. În timpul liber, îi place să exploreze natura, să citească și să participe 
+                la evenimente sociale.
+            </p>
+
+            <div className={styles.slideshowWrapper}>
+                <button onClick={prevSlide} className={`${styles.navButton} ${styles.leftButton}`}>◀</button>
+
+                <div className={styles.card}>
+                    <img src={poza.src} alt={`Poza ${poza.id}`} className={styles.image} />
+                    <h2 className={styles.title}>Poza {poza.id}</h2>
+                    <p className={styles.photoDescription}>{poza.descriere}</p>
+                    <div className={styles.actions}>
+                        <button onClick={handleLike} className={styles.likeButton}>
+                            <img src="/images/like.png" alt="Like" className={styles.icon} />
+                            <span>{likes[currentIndex]} Likes</span>
+                        </button>
+                        <button onClick={handleDislike} className={styles.dislikeButton}>
+                            <img src="/images/dislike.png" alt="Dislike" className={styles.icon} />
+                            <span>{dislikes[currentIndex]} Dislikes</span>
+                        </button>
                     </div>
-                ))}
+                </div>
+
+                <button onClick={nextSlide} className={`${styles.navButton} ${styles.rightButton}`}>▶</button>
             </div>
         </div>
     );
