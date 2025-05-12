@@ -6,13 +6,9 @@ const poze = [
     {
         id: 1,
         src: '/images/RusuCatalin.jpg',
-        descriere: '============================.',
+        descriere: 'SRI sub acoperire.',
     },
-    {
-        id: 2,
-        src: '/images/Rusufun.jpg',
-        descriere: '==========================.',
-    },
+    
 ];
 
 export default function RusuPage() {
@@ -77,7 +73,7 @@ export default function RusuPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>Profil Boboc - Rusu Catalin</h1>
             <p className={styles.description}>
-               ====================================
+              Iubesc sportul, iar până la finalul vieții vreau să le fi practicat pe toate.
             </p>
 
             <div className={styles.slideshowWrapper}>

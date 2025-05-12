@@ -72,7 +72,7 @@ export default function MentoriPage() {
 
     return (
         <div>
-            <h1 className={styles.header}>Mentori</h1>
+            <h1 className={styles.header}>Buturuga mică</h1>
             <div className={styles.cardContainer}>
                 {membri.map((membru, index) => (
                     <div key={membru.id} className={styles.card}>

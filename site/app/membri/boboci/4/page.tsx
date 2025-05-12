@@ -6,12 +6,12 @@ const poze = [
     {
         id: 1,
         src: '/images/TipuleacGabriela.jpg',
-        descriere: 'Aceasta este prima poză a coordonatorului, surprinsă într-un moment de relaxare.',
+        descriere: 'Vinând la intership ul de la Senses',
     },
     {
         id: 2,
         src: '/images/voluntar.jpg',
-        descriere: 'Coordonatorul nostru verificând sistemul audio.',
+        descriere: 'Live footage',
     },
 ];
 

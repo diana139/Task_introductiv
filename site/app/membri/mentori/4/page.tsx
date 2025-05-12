@@ -6,12 +6,12 @@ const poze = [
     {
         id: 1,
         src: '/images/MihneaPaval.jpg',
-        descriere: 'Mihnea Paval lucrând la un proiect interesant.',
+        descriere: 'Mihnea Pavăl lucrând la un proiect interesant.',
     },
     {
         id: 2,
         src: '/images/certificat.jpg',
-        descriere: 'Mihnea Paval lucrând la un proiect interesant.',
+        descriere: 'Rezultatul la proiectul interesant.',
     },
   
 ];
@@ -76,7 +76,7 @@ export default function PavalPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>Profil Mentor - Paval Mihnea</h1>
             <p className={styles.description}>
-             ============
+            ,,Haina nu face pe om, cine sapă groapa are lopată".
             </p>
             <div className={styles.slideshowWrapper}>
                 <button onClick={prevSlide} className={`${styles.navButton} ${styles.leftButton}`}>◀</button>

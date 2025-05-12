@@ -6,13 +6,9 @@ const poze = [
     {
         id: 1,
         src: '/images/MoisaAndrei.jpg',
-        descriere: 'Aceasta este prima poză a coordonatorului, surprinsă într-un moment de relaxare.',
+        descriere: 'O fericire relativă',
     },
-    {
-        id: 2,
-        src: '/images/Moisafun.jpg',
-        descriere: 'Coordonatorul nostru verificând sistemul audio.',
-    },
+   
 ];
 
 export default function MoisaPage() {

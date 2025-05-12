@@ -83,7 +83,8 @@ export default function RosuPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>Profil Boboc - Rosu Diana</h1>
             <p className={styles.description}>
-                Sunt o persoană calmă, dar și agitată în același timp
+                Diana este o persoană plină de viață, care aduce mereu zâmbete pe fețele celor din jur. Iubește animalele 
+                și are o pisică adorabilă pe nume Mimi. Diana este cunoscută pentru simțul ei al umorului și pentru momentele amuzante pe care le creează.
             </p>
 
             <div className={styles.slideshowWrapper}>

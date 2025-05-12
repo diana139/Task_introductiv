@@ -82,7 +82,7 @@ export default function IrimiaPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>Profil Mentor - Casandra Irimia</h1>
             <p className={styles.description}>
-                Ador sa explorez fiecare colt al lumii si sunt deschisa la orice fel de schimbari care ma ajuta sa evoluez pe plan profesional cat si personal
+                Ador să explorez fiecare colț al lumii si sunt deschisă la orice fel de schimbări care mă ajută să evoluez pe plan profesional cât și personal!
             </p>
             <div className={styles.slideshowWrapper}>
                 <button onClick={prevSlide} className={`${styles.navButton} ${styles.leftButton}`}>◀</button>

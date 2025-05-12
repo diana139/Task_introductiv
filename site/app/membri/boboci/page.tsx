@@ -75,7 +75,7 @@ export default function BobociPage() {
 
     return (
         <div>
-            <h1 className={styles.header}>Boboci</h1>
+            <h1 className={styles.header}>Haina nu face pe om</h1>
             <div className={styles.cardContainer}>
                 {membri.map((membru, index) => (
                     <div key={membru.id} className={styles.card}>

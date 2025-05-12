@@ -11,7 +11,7 @@ const poze = [
     {
         id: 2,
         src: '/images/angular.jpg',
-        descriere: '',
+        descriere: 'Canon Event',
     },
 ];
 
@@ -75,7 +75,9 @@ export default function MotricalaPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>Profil Mentor - Motricala Gabi</h1>
             <p className={styles.description}>
-            ========================
+                Motricală Alin este un mentor pasionat de Angular și dezvoltare web. Cu o experiență vastă în domeniu, 
+                el își dedică timpul pentru a ghida și inspira noile generații de programatori. În timpul liber, îi place 
+                să exploreze noi tehnologii și să participe la evenimente tech.
 
             </p>
             <div className={styles.slideshowWrapper}>
