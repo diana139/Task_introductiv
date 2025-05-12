@@ -76,7 +76,7 @@ export default function PavalPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>Profil Mentor - Paval Mihnea</h1>
             <p className={styles.description}>
-                Ador sa explorez fiecare colt al lumii si sunt deschisa la orice fel de schimbari care ma ajuta sa evoluez pe plan profesional cat si personal
+             ============
             </p>
             <div className={styles.slideshowWrapper}>
                 <button onClick={prevSlide} className={`${styles.navButton} ${styles.leftButton}`}>◀</button>
