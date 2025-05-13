@@ -10,7 +10,7 @@ const poze = [
     },
     {
         id: 2,
-        src: '/images/voluntar.jpg',
+        src: '/images/hunger.gif',
         descriere: 'Live footage',
     },
 ];

@@ -73,7 +73,9 @@ export default function MoisaPage() {
         <div className={styles.container}>
             <h1 className={styles.header}>Profil Boboc - Moisa Andrei</h1>
             <p className={styles.description}>
-                Sunt o persoană calmă, dar și agitată în același timp
+                Ziua creez jocuri și explorez lumea securității cibernetice, seara mă relaxez cu un antrenament de kickbox și o porție zdravănă de distracție. Îmi place să sparg coduri, nu și reguli (cu excepția celor din jocurile mele). Îmbin logica, adrenalinele și umorul ca într-un quest bine scris – iar final boss-ul e întotdeauna un bug încăpățânat.
+
+
             </p>
 
             <div className={styles.slideshowWrapper}>
